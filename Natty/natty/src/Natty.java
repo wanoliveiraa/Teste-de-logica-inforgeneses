@@ -1,4 +1,4 @@
-public class App {
+public class Natty {
     public static void main(String[] args) throws Exception {
         fibonacci(20);
         //Coloquei dessa forma para sequencia nao ser infinita
