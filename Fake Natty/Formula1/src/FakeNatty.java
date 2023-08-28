@@ -9,9 +9,10 @@ public class FakeNatty {
             var P = teclado.nextInt(); 
 
             if (G == 0 && P == 0) {
-                break; // Fim da entrada
+                break; // fim da entrada
             }
-            // armazena os resultados
+            // armazena os resultados, assim colocamos a numeração do piloto
+            //obs podia ser uma lista
             int[][] resultados = new int[G][P]; 
 
            
@@ -19,11 +20,13 @@ public class FakeNatty {
                 for (int j = 0; j < P; j++) {
                     //System.out.print("Digite a numeracao dos pilotos " + (j + 1) + ": ");
                     resultados[i][j] = teclado.nextInt();
+                    //colocando os numeros na matrizes
                 }
             }
             
             //System.out.println("Sistemas de pontuação diferentes serão testados");
             var S = teclado.nextInt();
+            //quantas vezes o tipo pontuação diferentes serão testados
             for(int i = 0; i< S; i++ ){
                 //System.out.println("Ordem dos pontos:");
                 var K = teclado.nextInt();
@@ -49,17 +52,20 @@ public class FakeNatty {
                     }
                 }
                 var maximoDePontos = 0 ;
+                // encontrar o máximo de pontos entre os valores do array totalPontos
                 for(int m = 0; m < P ; m++){
                     maximoDePontos = Math.max(maximoDePontos,totalPontos[m]);
                 }
 
                 var flag = false;
+                //verificar quais participantes têm o máximo de pontos 
                 for(int c = 0 ; c < P; c++){
                     if(maximoDePontos == totalPontos[c]){
                         if(flag){
                             System.out.println(" ");
                         }
                         //System.out.print("campeao:");
+                        //índice do participante,adiciona 1 para exibir o índice baseado em 1
                         System.out.println(c + 1);
                         flag = true;
                     }
